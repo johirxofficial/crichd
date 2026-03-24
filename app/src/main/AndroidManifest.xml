@@ -8,26 +8,20 @@
         android:allowBackup="true"
         android:icon="@drawable/logo"
         android:label="@string/app_name"
-        android:supportsRtl="true"
         android:theme="@style/Theme.CricHD"
         android:usesCleartextTraffic="true">
         
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:configChanges="orientation|screenSize|keyboardHidden">
+        <activity android:name=".MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity
+        <activity 
             android:name=".PlayerActivity"
-            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
             android:supportsPictureInPicture="true"
-            android:launchMode="singleTask"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
             android:theme="@style/Theme.CricHD.NoActionBar" />
-
     </application>
 </manifest>
