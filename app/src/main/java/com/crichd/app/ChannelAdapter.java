@@ -34,19 +34,12 @@ public class ChannelAdapter extends RecyclerView.Adapter<ChannelAdapter.ViewHold
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Channel channel = channels.get(position);
         holder.name.setText(channel.name);
-        
-        Glide.with(holder.itemView.getContext())
-             .load(channel.logoUrl)
-             .placeholder(android.R.drawable.ic_menu_camera)
-             .into(holder.logo);
-
+        Glide.with(holder.itemView.getContext()).load(channel.logoUrl).into(holder.logo);
         holder.itemView.setOnClickListener(v -> listener.onChannelClick(channel));
     }
 
     @Override
-    public int getItemCount() {
-        return channels.size();
-    }
+    public int getItemCount() { return channels.size(); }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView logo;
