@@ -2,16 +2,22 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:gravity="center"
-    android:padding="10dp"
-    android:background="#0f172a">
+    android:padding="15dp"
+    android:background="#0F172A">
 
     <ImageView
-        android:layout_width="150dp" 
-        android:layout_height="50dp"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
         android:src="@drawable/logo"
-        android:contentDescription="App Logo"
-        android:scaleType="fitCenter"/>
+        android:scaleType="fitCenter"
+        android:contentDescription="App Logo" />
+
+    <View
+        android:layout_width="100dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="5dp"
+        android:background="#38BDF8" />
 
 </LinearLayout>
