@@ -1,7 +1,11 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Theme.CricHD" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">#1E88E5</item>
-        <item name="colorPrimaryVariant">#1565C0</item>
-        <item name="colorOnPrimary">#FFFFFF</item>
+<resources>
+    <style name="Theme.CricHD" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">#0F172A</item>
+        <item name="android:statusBarColor">#0F172A</item>
+    </style>
+
+    <style name="Theme.CricHD.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:statusBarColor">#000000</item>
     </style>
 </resources>
