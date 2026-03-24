@@ -1,7 +1,6 @@
 package com.crichd.app;
 
 import android.app.PictureInPictureParams;
-import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Rational;
@@ -27,7 +26,6 @@ public class PlayerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_player);
 
         playerView = findViewById(R.id.player_view_full);
-        
         String url = getIntent().getStringExtra("url");
         String ref = getIntent().getStringExtra("ref");
         String origin = getIntent().getStringExtra("origin");
@@ -49,7 +47,6 @@ public class PlayerActivity extends AppCompatActivity {
         player.play();
     }
 
-    // PiP Mode Trigger on Home Button Press
     @Override
     protected void onUserLeaveHint() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -61,21 +58,10 @@ public class PlayerActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onPictureInPictureModeChanged(boolean isInPictureInPictureMode, Configuration newConfig) {
-        super.onPictureInPictureModeChanged(isInPictureInPictureMode, newConfig);
-        if (isInPictureInPictureMode) {
-            playerView.useController(); // Hide controls in PiP
-        } else {
-            playerView.showController();
-        }
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        // Background Play: Do not release player here to keep audio running
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N && !isInPictureInPictureMode()) {
-            // If not in PiP and stopped, you can choose to pause or keep playing
+    protected void onPause() {
+        super.onPause();
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N || !isInPictureInPictureMode()) {
+            // Background play support: do not pause if you want only audio
             // player.pause(); 
         }
     }
