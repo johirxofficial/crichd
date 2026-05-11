@@ -12,7 +12,7 @@ import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
-    private final String M3U_URL = "https://iptv-scraper-zilla.pages.dev/CricHD.m3u";
+    private final String M3U_URL = "https://raw.githubusercontent.com/srhady/crichd-speical-live-event/refs/heads/main/playlist.m3u";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
